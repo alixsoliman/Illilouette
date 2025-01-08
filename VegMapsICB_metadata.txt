@@ -1,0 +1,18 @@
+Illilouette Creek Basin vegetation map
+Created by Gabrielle Boisrame and others
+
+Vegetation Type Codes
+0 - Exposed rock or open water
+1 - Conifer (mainly Pinus contorta, Pinus jeffreyi, Abies magnifica, Abies concolor)
+2 - Shrubfield (mainly Ceanothus cordulatus)
+3 - Sparsely Vegetated (but not exposed rock)
+4 - Dense Meadow (most of this area is wetland, but not all could be verified as true wetland)
+5 - Aspen
+
+veg69_05m_icb_5.tif
+This 1969 map was created using aerial imagery provided by the Yosemite National Park archives, taken by Cartwright aerial surveys.
+
+veg12_05m_icb_5.tif
+This map was created using National Agriculture Imagery Program (NAIP) aerial imagery from 2012.
+
+Land cover for both maps was classified using eCognition.

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Swipe between maps</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet">
+<style>
+body { margin: 15; padding: 20; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; 
+    cursor: pointer;}
+
+#year-label {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 5px; /* Adjust as needed */
+    left: 25px;
+    right: 25px;
+    z-index: 9999; /* Ensure it's above the maps */
+
+    font-family: 'Open Sans', sans-serif; /* Change font to Open Sans */
+    font-size: 24px;
+    color: #3887BE;
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<div>
+    <div id="year-label">
+        <h1 align="left">1969</h1>
+        <h1 align="right">2012</h1>
+    </div>
+</div>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    body * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css">
+<div id="comparison-container">
+    <div id="before" class="map"></div>
+    <div id="after" class="map"></div>
+</div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeHNvbGltYW4iLCJhIjoiY2x0N2c3ZXU0MGZhbzJscm03bzhxbml5aSJ9.TnF2DDtFldCvVMt6JjT6oA';
+    const beforeMap = new mapboxgl.Map({
+        container: 'before',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/alixsoliman/clt7sd9jn00ie01pthp5ae1gi',
+        center: [-119.501770, 37.650962],
+        zoom: 11.2
+    });
+
+    const afterMap = new mapboxgl.Map({
+        container: 'after',
+        style: 'mapbox://styles/alixsoliman/clt7sihnt004u01r56q6xdk83',
+        center: [-119.501770, 37.650962],
+        zoom: 11.2
+    });
+
+    // A selector or reference to HTML element
+    const container = '#comparison-container';
+
+    const map = new mapboxgl.Compare(beforeMap, afterMap, container, {
+        // Set this to enable comparing two maps by mouse movement:
+        mousemove: true
+    });
+</script>
+
+</body>
+</html>

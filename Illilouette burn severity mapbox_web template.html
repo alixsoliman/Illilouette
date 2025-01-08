@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Template</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body { margin:20; padding:20; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+    #legend {
+      position: absolute;
+      top: 35px;
+      left: 15px;
+      padding: 10px 10px;
+      background-color: #fff;
+      opacity: 100;
+      width: 250px;
+      height: 115px;
+      z-index: 100;
+      font-family: Sans-serif;
+      font-size: 20px;
+      border-radius: 5px;
+}
+
+#legend span {
+      opacity: 0.8;
+      display: inline-flex;
+      width: 60px;
+}
+
+td {
+      font-size: 12px;
+      opacity: 100;
+}
+  </style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<div id='legend'>
+
+  <p><b>Maximum Burn Severity</b></p>
+  
+  <table>
+      
+    <tr>
+      <td> Low-Unburned </td>
+      <td> Low </td>
+      <td> Moderate </td>
+      <td> High </td>
+    </tr>
+          
+    <tr>
+      <td><span style='background:#fef0d9;'>&#8195;</span></td>
+      <td><span style='background:#fdb77a;'>&#8195;</span></td>
+      <td><span style='background:#ec603f;'>&#8195;</span></td>
+      <td><span style='background:#b30000;'>&#8195;</span></td>
+    </tr>
+        
+  </table>
+
+</div>
+
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpeHNvbGltYW4iLCJhIjoiY2x0N2c3ZXU0MGZhbzJscm03bzhxbml5aSJ9.TnF2DDtFldCvVMt6JjT6oA';
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/alixsoliman/cltrovbve01kz01ptezhy95xn',
+  center: [-119.515, 37.839],
+  zoom: 9.04
+});
+
+// Add zoom and rotation controls to the map. 
+map.addControl(new mapboxgl.NavigationControl()); 
+
+// Disable scroll zooming 
+map.scrollZoom.disable();
+</script>
+
+<div class="container">
+  <iframe width="100%" height="400" frameborder="0" scrolling="no" src="Illilouette burn severity_mapbox web template.html"></iframe>
+
+</div>
+
+</body>
+</html>
